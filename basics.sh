@@ -78,4 +78,63 @@ fi
 
 
 #CASE STATEMENT
+read -p "Are you an engineer ? Y/N " ANSWER
+case "$ANSWER" in 
+  [yY] | [yY][eE][sS])
+  echo "Please learn more and more languages"
+   ;;
+   [nN] | [nN][oO])
+   echo "Go for the engineering degree"
+   ;;
+*)
+  echo "Please enter y/yes or n/no"
+  ;;
+esac
 
+
+# SIMPLE FOR LOOP
+NAMES='Gaurav Saurav John Smith'
+for NAME in $NAMES 
+do
+echo "Hello $NAME"
+done
+
+
+# FOR LOOP TO RENAME FILES
+FILES=$(ls *.txt)
+NEW="new"
+for FILE in $FILES
+ do 
+  echo "Renaming $FILE to new-$FILE"
+  mv $FILE $NEW-$FILE   
+done
+
+
+#WHILE LOOP -  READ THROUGH A LINE BY LINE 
+LINE=1
+while read -r CURRENT_LINE
+ do 
+  echo "$LINE : $CURRENT_LINE"
+  ((LINE++))
+done < "./new-1.txt"
+
+
+#FUNCTION
+function sayHello() {
+  echo "Hello Gaurav"
+}
+sayHello
+
+
+#FUNCTION WITH PARAMS
+function greet(){
+  echo "Hello i am $1 and i am $2"
+}
+greet "gaurav" "28"
+
+
+#CREATE A FOLDER AND WRITE TO FILE    
+mkdir hello 
+touch "hello/world.txt"
+echo "Hello world" >> "hello/world.txt"
+echo "File Created"
