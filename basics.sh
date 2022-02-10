@@ -138,3 +138,14 @@ mkdir hello
 touch "hello/world.txt"
 echo "Hello world" >> "hello/world.txt"
 echo "File Created"
+
+# FILE TEST OPERATORS
+echo -e 'Enter the name of the file : \c'
+read file_name 
+
+if [ -e $file_name ]  
+then
+  echo "$file_name file found"
+ else 
+  echo "$file_name file not found"
+fi 
